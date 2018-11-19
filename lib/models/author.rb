@@ -1,11 +1,18 @@
 # frozen_string_literal: true
 
 class Author
-  attr_accessor :name
-  attr_accessor :biography
+  include Validator
+  attr_reader :name, :biography
 
-  def initialize(name = nil, biography = nil)
+  def initialize(name, biography = nil)
     @name = name
     @biography = biography
+  end
+
+  private
+
+  def validate(name)
+    check_class(name, String)
+    check_empty(name)
   end
 end
