@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
 class Library
-  attr_accessor :books
-  attr_accessor :authors
-  attr_accessor :readers
-  attr_accessor :orders
+  include Validator
+  attr_reader :books, :author, :readers, :orders
 
   def initialize(data = {})
     @books   = data[:books]   || []
