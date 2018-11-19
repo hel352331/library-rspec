@@ -2,8 +2,6 @@
 
 source 'https://rubygems.org'
 
-git_source(:github) { |ruby_library| "https://github.com/#{ruby_library}" }
-
 gem 'rspec', '~> 3.8'
 
 gem 'byebug'
